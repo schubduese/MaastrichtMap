@@ -3,7 +3,21 @@
   <Style name="My Style">
     <Rule>
       <PolygonSymbolizer fill="#f2eff9" />
-      <LineSymbolizer stroke="rgb(50%,50%,50%)" stroke-width="0.1" />
+      <LineSymbolizer stroke="rgb(50%,50%,50%)" stroke-width="0.5" />
+    </Rule>
+  </Style>
+
+  <Style name="roadsStyle">
+    <Rule>
+      <!-- <PolygonSymbolizer fill="#f2eff9" /> -->
+      <LineSymbolizer stroke="rgb(80%,80%,80%)" stroke-width="0.1" />
+    </Rule>
+  </Style>
+
+  <Style name="lineStyle">
+    <Rule>
+      <!-- <PolygonSymbolizer fill="#f2eff9" /> -->
+      <LineSymbolizer stroke="rgb(10%,10%,10%)" stroke-width="0.5" />
     </Rule>
   </Style>
 
@@ -21,6 +35,39 @@
           <Parameter name="extent">-180,-90,180,89.99</Parameter>
         -->
         </Datasource>
-  </Layer>
+    </Layer>
 
+
+    <Layer name="roads" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>roadsStyle</StyleName>
+    <Datasource>
+          <Parameter name="type">postgis</Parameter>
+          <Parameter name="host">10.3.0.1</Parameter>
+          <Parameter name="dbname">osmmaastricht</Parameter>
+          <Parameter name="user">osmuser</Parameter>      
+          <Parameter name="password">blub1234</Parameter>
+          <Parameter name="table">planet_osm_roads</Parameter>
+        <!--
+          <Parameter name="estimate_extent">false</Parameter>
+          <Parameter name="extent">-180,-90,180,89.99</Parameter>
+        -->
+        </Datasource>
+    </Layer>
+
+    <Layer name="line" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>lineStyle</StyleName>
+    <Datasource>
+          <Parameter name="type">postgis</Parameter>
+          <Parameter name="host">10.3.0.1</Parameter>
+          <Parameter name="dbname">osmmaastricht</Parameter>
+          <Parameter name="user">osmuser</Parameter>      
+          <Parameter name="password">blub1234</Parameter>
+          <Parameter name="table">planet_osm_line</Parameter>
+        <!--
+          <Parameter name="estimate_extent">false</Parameter>
+          <Parameter name="extent">-180,-90,180,89.99</Parameter>
+        -->
+        </Datasource>
+    </Layer>
+    
 </Map>
