@@ -1,0 +1,26 @@
+<Map background-color="steelblue" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+
+  <Style name="My Style">
+    <Rule>
+      <PolygonSymbolizer fill="#f2eff9" />
+      <LineSymbolizer stroke="rgb(50%,50%,50%)" stroke-width="0.1" />
+    </Rule>
+  </Style>
+
+  <Layer name="polygons" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    <StyleName>My Style</StyleName>
+    <Datasource>
+          <Parameter name="type">postgis</Parameter>
+          <Parameter name="host">10.3.0.1</Parameter>
+          <Parameter name="dbname">osmmaastricht</Parameter>
+          <Parameter name="user">osmuser</Parameter>      
+          <Parameter name="password">blub1234</Parameter>
+          <Parameter name="table">planet_osm_polygon</Parameter>
+        <!--
+          <Parameter name="estimate_extent">false</Parameter>
+          <Parameter name="extent">-180,-90,180,89.99</Parameter>
+        -->
+        </Datasource>
+  </Layer>
+
+</Map>
