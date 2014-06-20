@@ -50,7 +50,7 @@
 import mapnik
 stylesheet = 'maastricht.xml'
 image = 'maastricht.png'
-m = mapnik.Map(2000, 1000)
+m = mapnik.Map(8000, 4000)
 mapnik.load_map(m, stylesheet)
 m.zoom_all() 
 mapnik.render_to_file(m, image)
