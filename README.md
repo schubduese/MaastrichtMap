@@ -1,4 +1,4 @@
 MaastrichtMap
 =============
 
-Creating Map with OSM data from Maastricht
+Creating  a map with OSM data from Maastricht and higlight specially the churches of the city.
